@@ -1,30 +1,37 @@
 package com.todo.dto;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 import com.todo.entity.UserEntity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserDTO {
 
-    @NotNull
     private long uid;
 
-    @NotNull
+    @NotBlank
     private String username;
     
-    @NotNull
+    @NotBlank
     private String email;
 
-    @NotNull
+    @NotBlank
     private String password;
 
+    private Long affiliation;
+
     public UserEntity toEntity() {
-        return UserEntity.builder().uid(uid).username(username).email(email).password(password).build();
+        return UserEntity.builder().uid(uid).username(username).email(email).password(password).affiliation(affiliation).build();
     }
 
     

@@ -2,6 +2,7 @@ package com.todo.dto;
 
 import java.time.LocalDateTime;
 
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import com.todo.entity.TodoEntity;
@@ -16,22 +17,19 @@ public class TodoDTO {
     @NotNull
     private long id;
 
-    @NotNull
+    @NotEmpty
     private long createdUser;
 
-    @NotNull
+    @NotEmpty
     private String title;
 
-    // @NotNull
-    // private String content;
-
-    @NotNull
+    @NotEmpty
     private Boolean isComplete;
 
-    @NotNull
+    @NotEmpty
     private LocalDateTime startTime;
 
-    @NotNull
+    @NotEmpty
     private LocalDateTime endTime;
 
     public TodoEntity toEntity(){

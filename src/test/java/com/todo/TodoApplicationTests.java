@@ -1,5 +1,7 @@
 package com.todo;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -15,10 +17,14 @@ class TodoApplicationTests {
 
 	@Test
 	void contextLoads() {
-		logger.debug("[DEBUG]");
 		logger.info("[INFO]");
 		logger.warn("[WARN]");
 		logger.error("[ERROR]");
+	}
+
+	@Test
+	void testAssertion() {
+		assertEquals(2, 1+1);
 	}
 
 }

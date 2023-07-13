@@ -23,7 +23,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public String join(String username, String email, String password){
         
-        UserEntity userEntity = UserEntity.builder().username(username).email(email).password(password).build();
+        UserEntity userEntity = UserEntity.builder().username(username).email(email).password(password).affiliation(null).build();
 
         userRepository.save(userEntity);
 

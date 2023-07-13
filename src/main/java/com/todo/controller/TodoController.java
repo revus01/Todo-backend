@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -23,11 +22,6 @@ public class TodoController {
 
     @Autowired
     private TodoService todoService;
-
-    @GetMapping("/hello")
-    public String test() {
-        return "Hello, world!";
-    }
 
     //리스트 항목 출력
     @PostMapping("/list")

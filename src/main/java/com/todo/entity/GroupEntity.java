@@ -1,13 +1,12 @@
 package com.todo.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.todo.dto.UserDTO;
+import com.todo.dto.GroupDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,26 +15,27 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "users")
-public class UserEntity {
-    
+@Table(name = "groups")
+public class GroupEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "uid")
-    Long uid;
-    
-    String username;
-    String email;
-    String password;
-    Long affiliation;
+    Long groupId;
 
-    public UserDTO toDTO() {
-        return UserDTO.builder().uid(uid).username(username).email(email).password(password).affiliation(affiliation).build();
+    Long ownerId;
+    String groupName;
+
+    public GroupDTO toDto() {
+        return GroupDTO.builder().groupId(groupId).ownerId(ownerId).groupName(groupName).build();
     }
 
+
+
+    
 }

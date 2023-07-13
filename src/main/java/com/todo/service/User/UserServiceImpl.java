@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
         userDao.join(username, email, password);
         
 
-        return "끝";
+        return "success";
     }
 
     @Override
